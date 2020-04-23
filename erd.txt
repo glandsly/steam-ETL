@@ -1,0 +1,33 @@
+game_table
+--
+id PK int
+game_name varchar
+game_description VARCHAR
+genre VARCHAR
+price INT
+release_date VARCHAR
+developer VARCHAR
+review_count INT
+
+
+review_table
+--
+id PK int
+game_name VARCHAR
+review VARCHAR
+recommendation VARCHAR
+hour_played INT
+date_posted VARCHAR
+game_id INT FK -< game_table.id
+
+user_table
+--
+id PK int
+
+purchase_table
+--
+id PK int
+user_id INT FK - user_table
+game_name VARCHAR
+play_time INT
+
