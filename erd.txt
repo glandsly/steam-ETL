@@ -18,7 +18,7 @@ review VARCHAR
 recommendation VARCHAR
 hour_played INT
 date_posted VARCHAR
-game_id INT FK -< game_table.id
+game_id INT FK >- game_table.id
 
 user_table
 --
@@ -27,7 +27,8 @@ id PK int
 purchase_table
 --
 id PK int
-user_id INT FK - user_table
+user_id INT FK - user_table.id
 game_name VARCHAR
 play_time INT
+game_id INT FK >- game_table.id
 
