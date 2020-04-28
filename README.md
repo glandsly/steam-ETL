@@ -23,7 +23,7 @@ A few other transformations we did in this file involved dropping titles with in
 
 Finally we exported the finished dataset to titles.csv.
 
-## games_table
+## game_title.ipynb
 For the games table, first we dropped a large number of columns from the steam games complete dataset that contained information either unnecessary or difficult to merge. Using the top games identified from the titles.csv, we then compared the values in our new dataframe to the top games and filtered it down to just the matches.
 
 Next we dealt with special characters across our dataset, using replace and regex to clean the dataframe.
@@ -40,12 +40,12 @@ This notebook built the framework for the user_table. It involved the following 
 - Merging to only include users that were in found in titles.csv 
 - Then exporting the complete data to user_table.csv.
 
-## purchase_table
+## purchase_table.ipynb
 For the first Kaggle source, Steam Video Games, our team decided to use the following columns of data from the CSV to create our Purchase Table: user id, game title, and play time. The original CSV did not have column headers so these are the titles that we assigned. Further, in the original CSV there was a column of play/purchase data which related to the column “play_time”. However, if a user only purchased a game and did not yet play it, there was a 1 assigned to the “play_time” column. For users who played the game, their play time hours were listed. As such, we dropped all rows containing “purchase” since they did not include play time data, and we wanted to ensure accuracy. Once this step was complete, we dropped the play_purchase column as it was no longer useful, and we also dropped an unneeded column of zeros found in the CSV. To further clean up the dataset, we dropped all rows with n/a values.
 
 To incorporate another dataset, we merged this edited data frame with the transformed Steam Reviews Dataset (titles.csv) using the game title from both CSVs. The purpose of this merge was to add game id data, which could then be used to link this table to the Game Table. The final Purchase Table includes game id, game title, user id, and play time. We saved the data frame as Purchase_Table.csv and imported it to SQL on pgAdmin4 using the ERD_SQL.sql and data_etl.ipynb files.
 
-## review_table
+## review_table.ipynb
 The Review Table data was extracted from the csv in the steam reviews dataset.
 
 The Review table needed:
